@@ -1,0 +1,121 @@
+.navbar{
+  width:90%;
+  height:85px;
+  margin:auto;
+  margin-top:20px;
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+
+  border-radius:24px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 40px;
+
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1000;
+
+  background:rgba(8,8,18,0.6);
+}
+
+.logo{
+  font-size:2rem;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+}
+
+.nav-links a{
+  color:#d5d5d5;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:white;
+}
+
+.nav-btn{
+  padding:14px 28px;
+  border-radius:16px;
+  background:linear-gradient(90deg,#217bfe,#7b3cff);
+  color:white;
+  font-size:1rem;
+  font-weight:600;
+
+  transition:0.4s;
+}
+
+.nav-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 25px rgba(123,60,255,0.5);
+}
+
+/* ACTIVE LINK */
+
+.nav-links .active{
+  position:relative;
+
+  color:white;
+}
+
+.nav-links .active::after{
+  content:"";
+
+  position:absolute;
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:#8f52ff;
+
+  bottom:-18px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  box-shadow:
+  0 0 12px #8f52ff;
+}
+
+/* NAVBAR HOVER */
+
+.nav-links a{
+  position:relative;
+}
+
+.nav-links a::before{
+  content:"";
+
+  position:absolute;
+
+  bottom:-8px;
+  left:0;
+
+  width:0%;
+  height:1px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #297eff,
+    #a74fff
+  );
+
+  transition:0.4s;
+}
+
+.nav-links a:hover::before{
+  width:100%;
+}
