@@ -1,0 +1,307 @@
+.testimonials{
+
+  position:relative;
+
+  padding:180px 80px;
+
+  z-index:10;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.testimonials-header{
+
+  max-width:720px;
+
+  margin-bottom:80px;
+}
+
+.testimonials-label{
+
+  font-size:0.78rem;
+
+  letter-spacing:0.22em;
+
+  color:#71717a;
+
+  text-transform:uppercase;
+
+  font-weight:600;
+}
+
+.testimonials-header h2{
+
+  margin-top:18px;
+
+  font-size:5.5rem;
+
+  line-height:0.95;
+
+  letter-spacing:-4px;
+
+  font-weight:700;
+
+  color:white;
+}
+
+.testimonials-header h2 span{
+
+  color:#8f8f95;
+
+  font-style:italic;
+}
+
+.testimonials-header p{
+
+  margin-top:26px;
+
+  color:#a1a1aa;
+
+  line-height:1.9;
+
+  font-size:1.1rem;
+}
+
+/* ========================================
+   GRID
+======================================== */
+
+.testimonial-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:24px;
+}
+
+/* ========================================
+   CARD
+======================================== */
+
+.testimonial-card{
+
+  position:relative;
+
+  padding:38px;
+
+  border-radius:30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.045),
+      rgba(255,255,255,0.015)
+    );
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:blur(20px);
+
+  overflow:hidden;
+
+  transition:0.35s ease;
+}
+
+/* LIGHT */
+
+.testimonial-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:260px;
+  height:260px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.08),
+      transparent 72%
+    );
+
+  top:-120px;
+  right:-120px;
+}
+
+.testimonial-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+    0 20px 80px rgba(255,255,255,0.05);
+}
+
+/* ========================================
+   STARS
+======================================== */
+
+.stars{
+
+  display:flex;
+
+  gap:8px;
+
+  color:white;
+
+  font-size:0.9rem;
+}
+
+/* ========================================
+   TEXT
+======================================== */
+
+.testimonial-text{
+
+  margin-top:28px;
+
+  color:#d4d4d8;
+
+  line-height:2;
+
+  font-size:1rem;
+}
+
+/* ========================================
+   USER
+======================================== */
+
+.testimonial-user{
+
+  margin-top:40px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:16px;
+}
+
+.avatar{
+
+  width:50px;
+  height:50px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  color:white;
+
+  font-weight:600;
+}
+
+.testimonial-user h4{
+
+  color:white;
+
+  font-size:1rem;
+}
+
+.testimonial-user span{
+
+  color:#8f8f95;
+
+  font-size:0.92rem;
+}
+
+/* ========================================
+   STATS
+======================================== */
+
+.stats-row{
+
+  margin-top:120px;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:40px;
+}
+
+.stat-item{
+
+  border-left:
+    1px solid rgba(255,255,255,0.08);
+
+  padding-left:30px;
+}
+
+.stat-item h3{
+
+  font-size:3rem;
+
+  color:white;
+
+  letter-spacing:-2px;
+}
+
+.stat-item span{
+
+  margin-top:8px;
+
+  display:block;
+
+  color:#71717a;
+
+  text-transform:uppercase;
+
+  letter-spacing:0.12em;
+
+  font-size:0.75rem;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media(max-width:1100px){
+
+  .testimonial-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .stats-row{
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .testimonials{
+
+    padding:120px 20px;
+  }
+
+  .testimonials-header h2{
+
+    font-size:4rem;
+  }
+
+  .stats-row{
+
+    grid-template-columns:1fr;
+  }
+
+}

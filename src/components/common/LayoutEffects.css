@@ -1,0 +1,89 @@
+.global-grid{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-5;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+  background-size:60px 60px;
+
+  pointer-events:none;
+}
+
+/* CURSOR LIGHT */
+
+.global-mouse-glow{
+
+  position:fixed;
+
+  width:600px;
+  height:600px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0.05),
+      transparent 72%
+    );
+
+  transform:translate(-50%,-50%);
+
+  pointer-events:none;
+
+  z-index:-4;
+
+  filter:blur(70px);
+
+  opacity:0.9;
+
+  transition:
+    left 0.12s linear,
+    top 0.12s linear;
+}
+
+/* AMBIENT ORBS */
+
+.global-orb{
+
+  position:fixed;
+
+  border-radius:50%;
+
+  filter:blur(140px);
+
+  opacity:0.12;
+
+  z-index:-4;
+
+  pointer-events:none;
+}
+
+.orb-left{
+
+  width:500px;
+  height:500px;
+
+  background:white;
+
+  top:20%;
+  left:-220px;
+}
+
+.orb-right{
+
+  width:500px;
+  height:500px;
+
+  background:#6b7280;
+
+  top:45%;
+  right:-220px;
+}

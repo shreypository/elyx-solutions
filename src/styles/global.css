@@ -1,0 +1,52 @@
+:root{
+
+  /* BACKGROUNDS */
+
+  --bg-primary:#000000;
+  --bg-secondary:#0a0a0a;
+  --bg-card:#111111;
+
+  /* TEXT */
+
+  --text-primary:#ffffff;
+  --text-secondary:#a1a1aa;
+  --text-muted:#71717a;
+
+  /* BORDERS */
+
+  --border-color:rgba(255,255,255,0.08);
+
+  /* HOVER */
+
+  --hover-bg:rgba(255,255,255,0.06);
+
+  /* SHADOWS */
+
+  --shadow-sm:
+    0 4px 20px rgba(0,0,0,0.25);
+
+  --shadow-md:
+    0 8px 32px rgba(0,0,0,0.35);
+
+  --shadow-lg:
+    0 20px 60px rgba(0,0,0,0.45);
+
+  /* GRADIENTS */
+
+  --gradient-white:
+    linear-gradient(
+      to bottom,
+      #ffffff,
+      #8f8f8f
+    );
+
+  /* RADIUS */
+
+  --radius-sm:12px;
+  --radius-md:20px;
+  --radius-lg:32px;
+
+  /* TRANSITION */
+
+  --transition:all 0.3s ease;
+}
