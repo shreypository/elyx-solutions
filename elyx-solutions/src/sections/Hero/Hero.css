@@ -58,7 +58,11 @@
 
   border-radius:50%;
 
-  filter:blur(120px);
+  filter:blur(50px);
+
+contain:paint;
+
+isolation:isolate;
 
   opacity:0.18;
 
@@ -281,11 +285,9 @@
   background:
   linear-gradient(
     180deg,
-    rgba(14,14,16,0.92),
-    rgba(7,7,9,0.96)
+    rgba(14,14,16,0.94),
+    rgba(7,7,9,0.98)
   );
-
-  backdrop-filter:blur(18px);
 
   border:
   1px solid rgba(255,255,255,0.05);
@@ -294,38 +296,49 @@
 
   overflow:hidden;
 
-  transition:0.4s;
+  isolation:isolate;
+
+  contain:paint;
+
+  transition:
+  transform 0.4s ease,
+  border-color 0.4s ease,
+  box-shadow 0.4s ease;
 
   box-shadow:
-  0 0 25px rgba(255,255,255,0.03),
-  0 0 60px rgba(59,130,246,0.06);
+  0 0 20px rgba(255,255,255,0.025),
+  0 0 50px rgba(59,130,246,0.045);
 
   will-change:transform;
 }
+
+/* INTERNAL LIGHT */
 
 .floating-card::before{
   content:"";
 
   position:absolute;
 
-  width:180px;
-  height:180px;
+  inset:0;
 
-  border-radius:50%;
+  border-radius:inherit;
 
   background:
-  radial-gradient(
-    circle,
-    rgba(255,255,255,0.05),
-    rgba(59,130,246,0.08),
-    transparent 72%
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,0.015),
+    rgba(59,130,246,0.03),
+    transparent 65%
   );
 
-  top:-60px;
-  right:-60px;
+  opacity:0.7;
+
+  pointer-events:none;
+
+  z-index:0;
 }
 
-/* SUBTLE ACTIVE TRACE */
+/* ACTIVE TRACE */
 
 .floating-card::after{
   content:"";
@@ -353,9 +366,11 @@
   animation:
   cardTrace 7s linear infinite;
 
-  opacity:0.45;
+  opacity:0.42;
 
   pointer-events:none;
+
+  z-index:2;
 
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -376,22 +391,31 @@
 
 }
 
+/* HOVER */
+
 .floating-card:hover{
+
   animation-play-state:paused;
 
   transform:
-  translateY(-18px)
-  scale(1.04);
+  translateY(-16px)
+  scale(1.03);
 
   border-color:
-  rgba(59,130,246,0.16);
+  rgba(59,130,246,0.14);
 
   box-shadow:
-  0 0 40px rgba(59,130,246,0.12),
-  0 0 100px rgba(59,130,246,0.08);
+  0 0 35px rgba(59,130,246,0.08),
+  0 0 70px rgba(59,130,246,0.04);
 }
 
+/* TEXT */
+
 .floating-card h3{
+  position:relative;
+
+  z-index:3;
+
   margin-top:10px;
 
   font-size:1.45rem;
@@ -404,6 +428,10 @@
 }
 
 .floating-card p{
+  position:relative;
+
+  z-index:3;
+
   margin-top:12px;
 
   color:#aeb6c2;
@@ -416,6 +444,10 @@
 /* ICON */
 
 .card-icon{
+  position:relative;
+
+  z-index:3;
+
   width:58px;
   height:58px;
 
@@ -435,10 +467,16 @@
   );
 
   box-shadow:
-  0 0 25px rgba(59,130,246,0.18);
+  0 0 18px rgba(59,130,246,0.12);
 }
 
+/* LABEL */
+
 .card-label{
+  position:relative;
+
+  z-index:3;
+
   margin-top:14px;
 
   font-size:0.72rem;
@@ -454,6 +492,8 @@
 
 .arrow{
   position:absolute;
+
+  z-index:3;
 
   right:24px;
   bottom:24px;
@@ -474,6 +514,22 @@
   1px solid rgba(255,255,255,0.05);
 
   color:white;
+
+  transition:
+  background 0.4s ease,
+  border-color 0.4s ease,
+  transform 0.4s ease;
+}
+
+.floating-card:hover .arrow{
+
+  background:
+  rgba(59,130,246,0.08);
+
+  border-color:
+  rgba(59,130,246,0.14);
+
+  transform:translateX(2px);
 }
 
 /* DEFAULT CARD POSITIONS */
@@ -813,16 +869,16 @@
 
   position:absolute;
 
-  width:550px;
-  height:550px;
+  width:420px;
+  height:420px;
 
   border-radius:50%;
 
   background:
   radial-gradient(
     circle,
-    rgba(255,255,255,0.04),
-    rgba(59,130,246,0.08),
+    rgba(255,255,255,0.025),
+    rgba(59,130,246,0.045),
     transparent 72%
   );
 
@@ -833,11 +889,15 @@
 
   pointer-events:none;
 
-  filter:blur(35px);
+  filter:blur(18px);
+
+  contain:paint;
+
+  isolation:isolate;
 
   z-index:0;
 
-  opacity:0.75;
+  opacity:0.45;
 
   transition:
   left 0.15s linear,
@@ -846,6 +906,7 @@
   animation:
   pulseGlow 7s ease-in-out infinite;
 }
+
 /* ========================================
    PULSE ANIMATION
 ======================================== */
