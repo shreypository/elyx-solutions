@@ -1,0 +1,721 @@
+/* ========================================
+   SERVICES SECTION
+======================================== */
+
+.services-section{
+
+  position:relative;
+
+  padding:
+  180px 120px;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    #04040d 0%,
+    #070709 20%,
+    #090909 55%,
+    #050505 100%
+  );
+}
+
+/* ========================================
+   ATMOSPHERIC GLOW
+======================================== */
+
+.services-gradient{
+
+  position:absolute;
+
+  top:-300px;
+  right:-200px;
+
+  width:900px;
+  height:900px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,0.03),
+    rgba(59,130,246,0.04),
+    transparent 72%
+  );
+
+  filter:blur(40px);
+
+  pointer-events:none;
+}
+
+/* ========================================
+   SUBTLE NOISE
+======================================== */
+
+.services-noise{
+
+  position:absolute;
+
+  inset:0;
+
+  opacity:0.03;
+
+  background-image:
+  radial-gradient(
+    rgba(255,255,255,0.35) 0.6px,
+    transparent 0.6px
+  );
+
+  background-size:
+  12px 12px;
+
+  pointer-events:none;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.services-header{
+
+  position:relative;
+
+  z-index:5;
+
+  max-width:760px;
+
+  margin-bottom:120px;
+}
+
+/* LABEL */
+
+.services-label{
+
+  font-size:0.78rem;
+
+  letter-spacing:0.28em;
+
+  text-transform:uppercase;
+
+  color:#3b82f6;
+
+  margin-bottom:24px;
+}
+
+/* TITLE */
+
+.services-header h2{
+
+  font-size:5rem;
+
+  line-height:0.92;
+
+  letter-spacing:-4px;
+
+  color:white;
+
+  margin-bottom:30px;
+
+  font-weight:800;
+}
+
+/* DESCRIPTION */
+
+.services-description{
+
+  max-width:620px;
+
+  color:#9ea6b3;
+
+  line-height:1.95;
+
+  font-size:1rem;
+}
+
+/* ========================================
+   SERVICES LAYOUT
+======================================== */
+
+.services-layout{
+
+  position:relative;
+
+  z-index:3;
+
+  display:grid;
+
+  grid-template-columns:
+  1.1fr 0.9fr;
+
+  gap:80px;
+}
+
+/* ========================================
+   LEFT COLUMN
+======================================== */
+
+.services-left{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:100px;
+}
+
+/* ========================================
+   RIGHT COLUMN
+======================================== */
+
+.services-right{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:120px;
+
+  padding-top:80px;
+}
+
+/* ========================================
+   SERVICE ITEM
+======================================== */
+
+.service-item{
+
+  position:relative;
+
+  width:100%;
+}
+
+/* ========================================
+   DESKTOP ITEM
+======================================== */
+
+.desktop-item{
+
+  display:flex;
+
+  justify-content:flex-start;
+}
+
+/* ========================================
+   SOFTWARE ITEM
+======================================== */
+
+.software-item{
+
+  display:flex;
+
+  justify-content:flex-end;
+}
+
+/* ========================================
+   MOBILE ITEM
+======================================== */
+
+.mobile-item{
+
+  display:flex;
+
+  justify-content:center;
+}
+
+/* ========================================
+   AI ITEM
+======================================== */
+
+.ai-item{
+
+  display:flex;
+
+  justify-content:flex-start;
+}
+
+/* ========================================
+   DEVICE SIZE CONTROL
+======================================== */
+
+/* DESKTOP */
+
+.desktop-item
+.desktop-screen{
+
+  width:500px;
+  height:320px;
+}
+
+/* SOFTWARE */
+
+.software-item
+.software-window{
+
+  width:500px;
+
+  min-height:260px;
+}
+
+/* MOBILE */
+
+.mobile-item
+.mobile-screen{
+
+  width:220px;
+  height:430px;
+}
+
+/* AI */
+
+.ai-item
+.ai-core{
+
+  width:180px;
+  height:180px;
+}
+
+/* ========================================
+   SOFT DEPTH SHADOW
+======================================== */
+
+.service-item::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  bottom:-40px;
+
+  transform:translateX(-50%);
+
+  width:70%;
+  height:80px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,0.04),
+    transparent 72%
+  );
+
+  filter:blur(24px);
+
+  opacity:0.45;
+
+  pointer-events:none;
+
+  z-index:-1;
+}
+
+/* ========================================
+   DEVICE CONTENT POSITIONING
+======================================== */
+
+/* DESKTOP */
+
+.desktop-item
+.device-info{
+
+  left:24px;
+  bottom:24px;
+}
+
+/* SOFTWARE */
+
+.software-item
+.device-info{
+
+  left:24px;
+  bottom:22px;
+}
+
+/* MOBILE */
+
+.mobile-item
+.device-info{
+
+  left:20px;
+  bottom:20px;
+}
+
+/* AI */
+
+.ai-item
+.ai-info{
+
+  text-align:center;
+}
+
+/* ========================================
+   TITLE SIZE
+======================================== */
+
+.device-info h3{
+
+  font-size:1.9rem;
+
+  line-height:1;
+
+  margin-bottom:12px;
+}
+
+/* ========================================
+   DESCRIPTION SIZE
+======================================== */
+
+.device-info p{
+
+  width:86%;
+
+  font-size:0.88rem;
+
+  line-height:1.8;
+}
+
+/* ========================================
+   SUBTLE FLOATING MOTION
+======================================== */
+
+.desktop-item{
+
+  animation:
+  floatDesktop 7s ease-in-out infinite;
+}
+
+.mobile-item{
+
+  animation:
+  floatMobile 8s ease-in-out infinite;
+}
+
+.software-item{
+
+  animation:
+  floatSoftware 9s ease-in-out infinite;
+}
+
+.ai-item{
+
+  animation:
+  floatAI 10s ease-in-out infinite;
+}
+
+/* ========================================
+   FLOAT ANIMATIONS
+======================================== */
+
+@keyframes floatDesktop{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+@keyframes floatMobile{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+@keyframes floatSoftware{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-6px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+@keyframes floatAI{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* ========================================
+   SECTION TRANSITION
+======================================== */
+
+.services-section::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:100%;
+  height:180px;
+
+  background:
+  linear-gradient(
+    to bottom,
+    #04040d,
+    transparent
+  );
+
+  pointer-events:none;
+}
+
+/* ========================================
+   HOVER SPACING
+======================================== */
+
+.service-item{
+
+  transition:
+  transform 0.45s ease,
+  filter 0.45s ease;
+}
+
+.service-item:hover{
+
+  z-index:10;
+}
+
+/* ========================================
+   HOVER DEPTH
+======================================== */
+
+.service-item:hover
+.device-card{
+
+  transform:
+  translateY(-10px)
+  scale(1.015);
+}
+
+/* ========================================
+   BETTER BLACK BALANCE
+======================================== */
+
+.desktop-screen,
+.mobile-screen,
+.software-window{
+
+  backdrop-filter:
+  blur(18px);
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(14,14,16,0.96),
+    rgba(6,6,8,0.98)
+  );
+}
+
+/* ========================================
+   SCREEN OFF STATE
+======================================== */
+
+.desktop-screen,
+.mobile-screen,
+.software-window{
+
+  filter:
+  brightness(0.88)
+  saturate(0.7);
+
+  transition:0.45s ease;
+}
+
+/* ========================================
+   POWER ON STATE
+======================================== */
+
+.device-card:hover
+.desktop-screen,
+
+.device-card:hover
+.mobile-screen,
+
+.device-card:hover
+.software-window{
+
+  filter:
+  brightness(1)
+  saturate(1);
+}
+
+/* ========================================
+   BETTER TEXT VISIBILITY
+======================================== */
+
+.device-info{
+
+  text-shadow:
+  0 0 14px rgba(0,0,0,0.45);
+}
+
+.device-info h3{
+
+  color:white;
+}
+
+.device-info p{
+
+  color:#c0c7d2;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media(max-width:1200px){
+
+  .services-section{
+
+    padding:
+    160px 60px;
+  }
+
+  .services-header h2{
+
+    font-size:4rem;
+  }
+
+  .services-layout{
+
+    grid-template-columns:1fr;
+
+    gap:100px;
+  }
+
+  .services-right{
+
+    padding-top:0;
+  }
+
+  .desktop-item,
+  .software-item,
+  .mobile-item,
+  .ai-item{
+
+    justify-content:center;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .services-section{
+
+    padding:
+    120px 22px;
+  }
+
+  .services-header{
+
+    margin-bottom:90px;
+  }
+
+  .services-header h2{
+
+    font-size:3rem;
+
+    letter-spacing:-2px;
+  }
+
+  .services-description{
+
+    font-size:0.94rem;
+
+    line-height:1.9;
+  }
+
+  .services-left,
+  .services-right{
+
+    gap:80px;
+  }
+
+  /* DESKTOP */
+
+  .desktop-item
+  .desktop-screen{
+
+    width:100%;
+
+    height:260px;
+  }
+
+  /* SOFTWARE */
+
+  .software-item
+  .software-window{
+
+    width:100%;
+  }
+
+  /* MOBILE */
+
+  .mobile-item
+  .mobile-screen{
+
+    width:210px;
+    height:410px;
+  }
+
+  /* TEXT */
+
+  .device-info{
+
+    left:18px;
+    bottom:18px;
+  }
+
+  .device-info h3{
+
+    font-size:1.5rem;
+  }
+
+  .device-info p{
+
+    width:92%;
+
+    font-size:0.84rem;
+  }
+
+}

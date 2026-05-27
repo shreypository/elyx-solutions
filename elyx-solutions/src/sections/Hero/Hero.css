@@ -13,7 +13,14 @@
 
   overflow:hidden;
 
-  background:#04040d;
+  background:
+  linear-gradient(
+    180deg,
+    #04040d 0%,
+    #070709 22%,
+    #090909 55%,
+    #050505 100%
+  );
 
   padding-top:180px;
   padding-bottom:220px;
@@ -21,6 +28,7 @@
   padding-left:120px;
   padding-right:120px;
 }
+
 /* GRID BACKGROUND */
 
 .grid-bg{
@@ -29,12 +37,12 @@
 
   background-image:
   linear-gradient(
-    rgba(255,255,255,0.03) 1px,
+    rgba(255,255,255,0.025) 1px,
     transparent 1px
   ),
   linear-gradient(
     90deg,
-    rgba(255,255,255,0.03) 1px,
+    rgba(255,255,255,0.025) 1px,
     transparent 1px
   );
 
@@ -52,7 +60,7 @@
 
   filter:blur(120px);
 
-  opacity:0.25;
+  opacity:0.18;
 
   z-index:1;
 }
@@ -61,7 +69,13 @@
   width:350px;
   height:350px;
 
-  background:#5d2eff;
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,0.08),
+    rgba(59,130,246,0.08),
+    transparent 72%
+  );
 
   left:-100px;
   top:220px;
@@ -71,7 +85,13 @@
   width:350px;
   height:350px;
 
-  background:#246bff;
+  background:
+  radial-gradient(
+    circle,
+    rgba(255,255,255,0.06),
+    rgba(59,130,246,0.08),
+    transparent 72%
+  );
 
   right:-100px;
   top:260px;
@@ -104,15 +124,17 @@
 
   border-radius:999px;
 
-  background:rgba(255,255,255,0.04);
+  background:
+  rgba(255,255,255,0.035);
 
-  border:1px solid rgba(255,255,255,0.08);
+  border:
+  1px solid rgba(255,255,255,0.06);
 
   backdrop-filter:blur(12px);
 
   margin-bottom:35px;
 
-  color:#d8d8d8;
+  color:#d8dde6;
 
   font-size:1rem;
 }
@@ -131,13 +153,17 @@
   position:relative;
 
   z-index:10;
+
+  color:white;
 }
 
 .hero h1 span{
-  background:linear-gradient(
+  background:
+  linear-gradient(
     90deg,
-    #2d81ff,
-    #b84cff
+    #ffffff,
+    #9fb7ff,
+    #3b82f6
   );
 
   -webkit-background-clip:text;
@@ -153,7 +179,7 @@
 
   max-width:700px;
 
-  color:#b8b8b8;
+  color:#aeb6c2;
 
   font-size:1.15rem;
 
@@ -182,10 +208,11 @@
 
   border-radius:18px;
 
-  background:linear-gradient(
+  background:
+  linear-gradient(
     90deg,
-    #267dff,
-    #914bff
+    #1f2937,
+    #3b82f6
   );
 
   color:white;
@@ -195,8 +222,11 @@
 
   transition:0.4s;
 
+  border:
+  1px solid rgba(255,255,255,0.06);
+
   box-shadow:
-  0 10px 40px rgba(96,76,255,0.35);
+  0 10px 40px rgba(59,130,246,0.18);
 }
 
 .primary-btn:hover{
@@ -205,7 +235,7 @@
   scale(1.03);
 
   box-shadow:
-  0 15px 60px rgba(96,76,255,0.5);
+  0 16px 60px rgba(59,130,246,0.28);
 }
 
 .secondary-btn{
@@ -213,9 +243,11 @@
 
   border-radius:18px;
 
-  background:rgba(255,255,255,0.03);
+  background:
+  rgba(255,255,255,0.03);
 
-  border:1px solid rgba(255,255,255,0.08);
+  border:
+  1px solid rgba(255,255,255,0.06);
 
   backdrop-filter:blur(12px);
 
@@ -228,7 +260,12 @@
 }
 
 .secondary-btn:hover{
-  background:rgba(255,255,255,0.08);
+
+  background:
+  rgba(255,255,255,0.06);
+
+  border-color:
+  rgba(255,255,255,0.1);
 }
 /* FLOATING CARDS */
 
@@ -241,11 +278,17 @@
 
   border-radius:28px;
 
-  background:rgba(7,7,20,0.68);
+  background:
+  linear-gradient(
+    180deg,
+    rgba(14,14,16,0.92),
+    rgba(7,7,9,0.96)
+  );
 
   backdrop-filter:blur(18px);
 
-  border:1px solid rgba(255,255,255,0.07);
+  border:
+  1px solid rgba(255,255,255,0.05);
 
   z-index:3;
 
@@ -254,11 +297,12 @@
   transition:0.4s;
 
   box-shadow:
-  0 0 25px rgba(0,119,255,0.08),
-  0 0 60px rgba(162,0,255,0.08);
+  0 0 25px rgba(255,255,255,0.03),
+  0 0 60px rgba(59,130,246,0.06);
 
   will-change:transform;
 }
+
 .floating-card::before{
   content:"";
 
@@ -269,14 +313,67 @@
 
   border-radius:50%;
 
-  background:radial-gradient(
+  background:
+  radial-gradient(
     circle,
-    rgba(120,80,255,0.25),
-    transparent 70%
+    rgba(255,255,255,0.05),
+    rgba(59,130,246,0.08),
+    transparent 72%
   );
 
   top:-60px;
   right:-60px;
+}
+
+/* SUBTLE ACTIVE TRACE */
+
+.floating-card::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:inherit;
+
+  padding:1px;
+
+  background:
+  linear-gradient(
+    130deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(59,130,246,0.9) 50%,
+    transparent 62%,
+    transparent 100%
+  );
+
+  background-size:250% 250%;
+
+  animation:
+  cardTrace 7s linear infinite;
+
+  opacity:0.45;
+
+  pointer-events:none;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite:xor;
+}
+
+@keyframes cardTrace{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  100%{
+    background-position:250% 50%;
+  }
+
 }
 
 .floating-card:hover{
@@ -286,11 +383,12 @@
   translateY(-18px)
   scale(1.04);
 
-  border-color:rgba(120,90,255,0.5);
+  border-color:
+  rgba(59,130,246,0.16);
 
   box-shadow:
-  0 0 40px rgba(79,140,255,0.25),
-  0 0 100px rgba(155,80,255,0.2);
+  0 0 40px rgba(59,130,246,0.12),
+  0 0 100px rgba(59,130,246,0.08);
 }
 
 .floating-card h3{
@@ -301,12 +399,14 @@
   line-height:1.1;
 
   font-weight:700;
+
+  color:white;
 }
 
 .floating-card p{
   margin-top:12px;
 
-  color:#a9a9a9;
+  color:#aeb6c2;
 
   line-height:1.6;
 
@@ -327,14 +427,15 @@
 
   font-size:1.5rem;
 
-  background:linear-gradient(
+  background:
+  linear-gradient(
     180deg,
-    #2f80ff,
-    #6a35ff
+    #1f2937,
+    #3b82f6
   );
 
   box-shadow:
-  0 0 25px rgba(38,132,255,0.25);
+  0 0 25px rgba(59,130,246,0.18);
 }
 
 .card-label{
@@ -346,7 +447,7 @@
 
   text-transform:uppercase;
 
-  color:#8f8f8f;
+  color:#7f8794;
 }
 
 /* ARROW */
@@ -366,7 +467,11 @@
   align-items:center;
   justify-content:center;
 
-  background:rgba(255,255,255,0.06);
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid rgba(255,255,255,0.05);
 
   color:white;
 }
@@ -428,8 +533,8 @@
   background:
   radial-gradient(
     circle at top,
-    rgba(109,72,255,0.95),
-    rgba(33,125,255,0.55),
+    rgba(255,255,255,0.08),
+    rgba(59,130,246,0.14),
     transparent 72%
   );
 
@@ -470,7 +575,6 @@
 
 }
 
-
 /* ========================================
    RESPONSIVE FLOATING CARDS
 ======================================== */
@@ -487,26 +591,32 @@
   }
 
   /* TOP LEFT */
+
   .card1{
     left:60px;
     top:170px;
   }
 
   /* BOTTOM LEFT */
+
   .card2{
     left:90px;
-    bottom:80px;  }
+    bottom:80px;
+  }
 
   /* TOP RIGHT */
+
   .card3{
     right:60px;
     top:170px;
   }
 
   /* BOTTOM RIGHT */
+
   .card4{
     right:90px;
-    bottom:80px;  }
+    bottom:80px;
+  }
 
 }
 
@@ -516,7 +626,7 @@
 
     transform:scale(0.82);
 
-    opacity:0.95;
+    opacity:0.92;
   }
 
   .card1{
@@ -526,7 +636,8 @@
 
   .card2{
     left:60px;
-    bottom:70px;  }
+    bottom:70px;
+  }
 
   .card3{
     right:40px;
@@ -535,7 +646,8 @@
 
   .card4{
     right:60px;
-    bottom:70px;  }
+    bottom:70px;
+  }
 
 }
 
@@ -545,7 +657,7 @@
 
     transform:scale(0.72);
 
-    opacity:0.85;
+    opacity:0.8;
   }
 
   .card1{
@@ -555,7 +667,8 @@
 
   .card2{
     left:20px;
-    bottom:60px;  }
+    bottom:60px;
+  }
 
   .card3{
     right:0px;
@@ -564,7 +677,8 @@
 
   .card4{
     right:20px;
-    bottom:60px;  }
+    bottom:60px;
+  }
 
 }
 
@@ -574,7 +688,7 @@
 
     transform:scale(0.62);
 
-    opacity:0.55;
+    opacity:0.5;
 
     filter:blur(0.2px);
   }
@@ -605,7 +719,7 @@
 
   .floating-card{
 
-    opacity:0.3;
+    opacity:0.28;
 
     transform:scale(0.5);
   }
@@ -667,6 +781,8 @@
     padding:0 10px;
 
     line-height:1.7;
+
+    color:#b6bec9;
   }
 
   .hero-buttons{
@@ -688,6 +804,7 @@
   }
 
 }
+
 /* ========================================
    MOUSE GLOW
 ======================================== */
@@ -704,8 +821,8 @@
   background:
   radial-gradient(
     circle,
-    rgba(93,70,255,0.16),
-    rgba(0,140,255,0.08),
+    rgba(255,255,255,0.04),
+    rgba(59,130,246,0.08),
     transparent 72%
   );
 
@@ -720,7 +837,7 @@
 
   z-index:0;
 
-  opacity:0.9;
+  opacity:0.75;
 
   transition:
   left 0.15s linear,
@@ -729,7 +846,6 @@
   animation:
   pulseGlow 7s ease-in-out infinite;
 }
-
 /* ========================================
    PULSE ANIMATION
 ======================================== */
@@ -742,16 +858,16 @@
     translate(-50%,-50%)
     scale(1);
 
-    opacity:0.7;
+    opacity:0.55;
   }
 
   50%{
 
     transform:
     translate(-50%,-50%)
-    scale(1.12);
+    scale(1.08);
 
-    opacity:1;
+    opacity:0.85;
   }
 
   100%{
@@ -760,10 +876,11 @@
     translate(-50%,-50%)
     scale(1);
 
-    opacity:0.7;
+    opacity:0.55;
   }
 
 }
+
 /* =========================
    PARTICLES
 ========================= */
@@ -786,11 +903,16 @@
 
   border-radius:50%;
 
-  background:white;
+  background:
+  rgba(255,255,255,0.75);
 
-  opacity:0.5;
+  opacity:0.35;
 
-  animation:floatParticle linear infinite;
+  box-shadow:
+  0 0 10px rgba(59,130,246,0.18);
+
+  animation:
+  floatParticle linear infinite;
 }
 
 .particles span:nth-child(1){
@@ -831,6 +953,7 @@
 @keyframes floatParticle{
 
   from{
+
     transform:
     translateY(0px);
 
@@ -838,10 +961,11 @@
   }
 
   20%{
-    opacity:0.5;
+    opacity:0.35;
   }
 
   to{
+
     transform:
     translateY(-1000px);
 
@@ -858,28 +982,32 @@
   left:40px;
   top:260px;
 
-  animation:floatCard1 6s ease-in-out infinite;
+  animation:
+  floatCard1 6s ease-in-out infinite;
 }
 
 .card2{
   left:70px;
   bottom:140px;
 
-  animation:floatCard2 7s ease-in-out infinite;
+  animation:
+  floatCard2 7s ease-in-out infinite;
 }
 
 .card3{
   right:40px;
   top:260px;
 
-  animation:floatCard3 6s ease-in-out infinite;
+  animation:
+  floatCard3 6s ease-in-out infinite;
 }
 
 .card4{
   right:70px;
   bottom:140px;
 
-  animation:floatCard4 7s ease-in-out infinite;
+  animation:
+  floatCard4 7s ease-in-out infinite;
 }
 
 @keyframes floatCard1{
@@ -962,8 +1090,9 @@
   background:
   radial-gradient(
     circle,
-    rgba(255,255,255,0.12),
-    transparent 70%
+    rgba(255,255,255,0.08),
+    rgba(59,130,246,0.06),
+    transparent 72%
   );
 
   transform:rotate(25deg);
@@ -989,8 +1118,8 @@
   background:
   linear-gradient(
     90deg,
-    rgba(39,125,255,0.2),
-    rgba(162,0,255,0.2)
+    rgba(255,255,255,0.06),
+    rgba(59,130,246,0.12)
   );
 
   -webkit-mask:
@@ -1027,7 +1156,7 @@
   linear-gradient(
     90deg,
     transparent,
-    rgba(255,255,255,0.25),
+    rgba(255,255,255,0.16),
     transparent
   );
 
@@ -1051,13 +1180,13 @@
   left:0;
 
   width:100%;
-  height:200px;
+  height:220px;
 
   background:
   linear-gradient(
     to bottom,
     transparent,
-    #04040d
+    #050505
   );
 
   z-index:5;
@@ -1069,5 +1198,5 @@
 
 .hero-content{
   text-shadow:
-  0 0 40px rgba(255,255,255,0.05);
-} 
+  0 0 40px rgba(255,255,255,0.04);
+}

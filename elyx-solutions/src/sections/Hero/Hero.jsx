@@ -93,7 +93,10 @@ const Hero = () => {
 
   return (
 
-    <section className="hero">
+    <section
+  className="hero"
+  id="hero"
+>
 
       {/* GRID */}
       <div className="grid-bg"></div>

@@ -1,0 +1,1099 @@
+/* ========================================
+   DEVICE CARD
+======================================== */
+
+.device-card{
+
+  position:relative;
+
+  width:100%;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  isolation:isolate;
+
+  transition:0.45s ease;
+}
+
+/* ========================================
+   ACTIVE BORDER TRACE
+======================================== */
+
+.trace-border{
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:34px;
+
+  padding:1px;
+
+  background:
+  linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(59,130,246,0.9) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+
+  background-size:250% 250%;
+
+  animation:
+  traceMove 6s linear infinite;
+
+  opacity:0.55;
+
+  pointer-events:none;
+
+  z-index:20;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite:xor;
+}
+
+@keyframes traceMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  100%{
+    background-position:250% 50%;
+  }
+
+}
+
+/* ========================================
+   HOVER STATE
+======================================== */
+
+.device-card:hover{
+
+  transform:
+  translateY(-8px);
+}
+
+.device-card:hover
+.trace-border{
+
+  opacity:1;
+
+  filter:
+  drop-shadow(
+    0 0 14px rgba(59,130,246,0.7)
+  );
+}
+
+/* ========================================
+   DESKTOP DEVICE
+======================================== */
+
+.desktop-device{
+
+  position:relative;
+
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+}
+
+/* ========================================
+   DESKTOP SCREEN
+======================================== */
+
+.desktop-screen{
+
+  position:relative;
+
+  width:540px;
+  height:340px;
+
+  border-radius:24px;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(10,10,12,1),
+    rgba(5,5,7,1)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.05);
+
+  transition:0.45s ease;
+
+  box-shadow:
+  inset 0 0 0 1px rgba(255,255,255,0.02);
+}
+
+/* POWER ON */
+
+.device-card:hover
+.desktop-screen{
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(10,18,32,1),
+    rgba(4,8,16,1)
+  );
+
+  border-color:
+  rgba(59,130,246,0.16);
+
+  box-shadow:
+  0 0 60px rgba(59,130,246,0.08),
+  inset 0 0 80px rgba(59,130,246,0.06);
+}
+
+/* ========================================
+   SCREEN GLOW SWEEP
+======================================== */
+
+.desktop-screen::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:-120%;
+  left:-40%;
+
+  width:40%;
+  height:300%;
+
+  background:
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.06),
+    transparent
+  );
+
+  transform:rotate(18deg);
+
+  opacity:0;
+
+  transition:0.4s ease;
+
+  pointer-events:none;
+}
+
+.device-card:hover
+.desktop-screen::before{
+
+  opacity:1;
+
+  animation:
+  screenSweep 2.6s ease infinite;
+}
+
+@keyframes screenSweep{
+
+  0%{
+    left:-40%;
+  }
+
+  100%{
+    left:140%;
+  }
+
+}
+
+/* ========================================
+   TOP BAR
+======================================== */
+
+.desktop-topbar{
+
+  width:100%;
+  height:42px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:0 18px;
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.03);
+}
+
+.desktop-topbar span{
+
+  width:7px;
+  height:7px;
+
+  border-radius:50%;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  transition:0.45s ease;
+}
+
+.device-card:hover
+.desktop-topbar span{
+
+  background:#3b82f6;
+
+  box-shadow:
+  0 0 10px rgba(59,130,246,0.7);
+}
+
+/* ========================================
+   DESKTOP UI
+======================================== */
+
+.desktop-ui{
+
+  padding:
+  28px 26px 0;
+}
+
+/* UI LINES */
+
+.ui-line{
+
+  height:9px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  margin-bottom:18px;
+
+  opacity:0.45;
+
+  transition:0.45s ease;
+}
+
+.ui-line.long{
+  width:86%;
+}
+
+.ui-line.medium{
+  width:62%;
+}
+
+.ui-line.short{
+  width:38%;
+}
+
+/* POWER ON */
+
+.device-card:hover
+.ui-line{
+
+  opacity:1;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(59,130,246,0.9),
+    rgba(59,130,246,0.18)
+  );
+}
+
+/* ========================================
+   DESKTOP GRID
+======================================== */
+
+.desktop-grid{
+
+  margin-top:26px;
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 1fr;
+
+  gap:18px;
+}
+
+.desktop-grid div{
+
+  height:88px;
+
+  border-radius:18px;
+
+  background:
+  rgba(255,255,255,0.025);
+
+  border:
+  1px solid rgba(255,255,255,0.03);
+
+  transition:0.45s ease;
+}
+
+.device-card:hover
+.desktop-grid div{
+
+  background:
+  rgba(59,130,246,0.06);
+
+  border-color:
+  rgba(59,130,246,0.12);
+
+  box-shadow:
+  inset 0 0 30px rgba(59,130,246,0.05);
+}
+
+/* ========================================
+   DEVICE INFO
+======================================== */
+
+.device-info{
+
+  position:absolute;
+
+  left:28px;
+  bottom:28px;
+
+  z-index:5;
+}
+
+.device-info h3{
+
+  font-size:2rem;
+
+  line-height:1;
+
+  font-weight:800;
+
+  letter-spacing:-2px;
+
+  color:white;
+
+  margin-bottom:14px;
+}
+
+.device-info p{
+
+  width:82%;
+
+  color:#9ea6b3;
+
+  line-height:1.9;
+
+  font-size:0.92rem;
+}
+
+/* ========================================
+   DESKTOP STAND
+======================================== */
+
+.desktop-stand{
+
+  width:54px;
+  height:44px;
+
+  margin-top:-2px;
+
+  border-radius:
+  0 0 18px 18px;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(12,12,14,1),
+    rgba(6,6,8,1)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.04);
+}
+
+.desktop-base{
+
+  width:120px;
+  height:10px;
+
+  margin-top:12px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  transition:0.45s ease;
+}
+
+.device-card:hover
+.desktop-base{
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(59,130,246,0.8),
+    rgba(59,130,246,0.15)
+  );
+}
+
+/* ========================================
+   MOBILE DEVICE
+======================================== */
+
+.mobile-device{
+
+  position:relative;
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+}
+
+/* ========================================
+   MOBILE SCREEN
+======================================== */
+
+.mobile-screen{
+
+  position:relative;
+
+  width:240px;
+  height:470px;
+
+  border-radius:42px;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(10,10,12,1),
+    rgba(5,5,7,1)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.05);
+
+  transition:0.45s ease;
+}
+
+/* POWER ON */
+
+.device-card:hover
+.mobile-screen{
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(10,18,32,1),
+    rgba(4,8,16,1)
+  );
+
+  border-color:
+  rgba(59,130,246,0.16);
+
+  box-shadow:
+  0 0 60px rgba(59,130,246,0.08),
+  inset 0 0 80px rgba(59,130,246,0.06);
+}
+
+/* ========================================
+   MOBILE NOTCH
+======================================== */
+
+.mobile-notch{
+
+  position:absolute;
+
+  top:12px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  width:96px;
+  height:22px;
+
+  border-radius:20px;
+
+  background:#020304;
+
+  z-index:10;
+}
+
+/* ========================================
+   MOBILE UI
+======================================== */
+
+.mobile-ui{
+
+  padding:
+  54px 20px 0;
+}
+
+/* IMAGE */
+
+.mobile-image{
+
+  width:100%;
+  height:120px;
+
+  border-radius:24px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  margin-bottom:22px;
+
+  opacity:0.5;
+
+  transition:0.45s ease;
+}
+
+.device-card:hover
+.mobile-image{
+
+  opacity:1;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(59,130,246,0.85),
+    rgba(59,130,246,0.12)
+  );
+}
+
+/* MOBILE LINES */
+
+.mobile-line{
+
+  height:9px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  margin-bottom:14px;
+
+  opacity:0.45;
+
+  transition:0.45s ease;
+}
+
+.mobile-line.long{
+  width:84%;
+}
+
+.mobile-line.short{
+  width:52%;
+}
+
+.device-card:hover
+.mobile-line{
+
+  opacity:1;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(59,130,246,0.9),
+    rgba(59,130,246,0.14)
+  );
+}
+
+/* ========================================
+   MOBILE BUTTONS
+======================================== */
+
+.mobile-buttons{
+
+  margin-top:24px;
+
+  display:flex;
+
+  gap:14px;
+}
+
+.mobile-buttons div{
+
+  flex:1;
+
+  height:54px;
+
+  border-radius:18px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,255,255,0.03);
+
+  transition:0.45s ease;
+}
+
+.device-card:hover
+.mobile-buttons div{
+
+  background:
+  rgba(59,130,246,0.07);
+
+  border-color:
+  rgba(59,130,246,0.1);
+
+  box-shadow:
+  inset 0 0 20px rgba(59,130,246,0.05);
+}
+
+/* ========================================
+   MOBILE INFO
+======================================== */
+
+.mobile-info{
+
+  left:24px;
+  bottom:24px;
+}
+
+.mobile-info h3{
+
+  font-size:1.8rem;
+
+  letter-spacing:-1.5px;
+}
+
+.mobile-info p{
+
+  width:90%;
+}
+
+/* ========================================
+   SOFTWARE DEVICE
+======================================== */
+
+.software-device{
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:center;
+}
+
+/* ========================================
+   SOFTWARE WINDOW
+======================================== */
+
+.software-window{
+
+  position:relative;
+
+  width:520px;
+  min-height:280px;
+
+  border-radius:26px;
+
+  overflow:hidden;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(10,10,12,1),
+    rgba(5,5,7,1)
+  );
+
+  border:
+  1px solid rgba(255,255,255,0.05);
+
+  transition:0.45s ease;
+}
+
+/* POWER ON */
+
+.device-card:hover
+.software-window{
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(10,18,32,1),
+    rgba(4,8,16,1)
+  );
+
+  border-color:
+  rgba(59,130,246,0.16);
+
+  box-shadow:
+  0 0 60px rgba(59,130,246,0.08),
+  inset 0 0 80px rgba(59,130,246,0.05);
+}
+
+/* ========================================
+   SOFTWARE HEADER
+======================================== */
+
+.software-header{
+
+  width:100%;
+  height:46px;
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:0 18px;
+
+  border-bottom:
+  1px solid rgba(255,255,255,0.03);
+}
+
+.software-header span{
+
+  width:8px;
+  height:8px;
+
+  border-radius:50%;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  transition:0.45s ease;
+}
+
+.device-card:hover
+.software-header span{
+
+  background:#3b82f6;
+
+  box-shadow:
+  0 0 10px rgba(59,130,246,0.7);
+}
+
+/* ========================================
+   SOFTWARE UI
+======================================== */
+
+.software-ui{
+
+  display:flex;
+
+  min-height:160px;
+}
+
+/* SIDEBAR */
+
+.software-sidebar{
+
+  width:72px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border-right:
+  1px solid rgba(255,255,255,0.03);
+}
+
+/* CONTENT */
+
+.software-content{
+
+  flex:1;
+
+  padding:24px;
+}
+
+/* SOFTWARE LINES */
+
+.software-line{
+
+  height:10px;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  margin-bottom:16px;
+
+  opacity:0.45;
+
+  transition:0.45s ease;
+}
+
+.software-line.long{
+  width:86%;
+}
+
+.software-line.medium{
+  width:62%;
+}
+
+.software-line.short{
+  width:38%;
+}
+
+/* POWER ON */
+
+.device-card:hover
+.software-line{
+
+  opacity:1;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(59,130,246,0.9),
+    rgba(59,130,246,0.14)
+  );
+}
+
+/* ========================================
+   SOFTWARE BOXES
+======================================== */
+
+.software-boxes{
+
+  margin-top:24px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:14px;
+}
+
+.software-boxes div{
+
+  height:58px;
+
+  border-radius:16px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  border:
+  1px solid rgba(255,255,255,0.03);
+
+  transition:0.45s ease;
+}
+
+.device-card:hover
+.software-boxes div{
+
+  background:
+  rgba(59,130,246,0.06);
+
+  border-color:
+  rgba(59,130,246,0.1);
+
+  box-shadow:
+  inset 0 0 20px rgba(59,130,246,0.05);
+}
+
+/* ========================================
+   AI DEVICE
+======================================== */
+
+.ai-device{
+
+  width:100%;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:32px;
+}
+
+/* ========================================
+   AI CORE
+======================================== */
+
+.ai-core{
+
+  position:relative;
+
+  width:180px;
+  height:180px;
+}
+
+.ai-ring{
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:50%;
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  animation:
+  rotateRing linear infinite;
+
+  transition:0.45s ease;
+}
+
+.ring1{
+  animation-duration:12s;
+}
+
+.ring2{
+
+  inset:20px;
+
+  animation-duration:8s;
+
+  animation-direction:reverse;
+}
+
+.ring3{
+
+  inset:40px;
+
+  animation-duration:5s;
+}
+
+/* CENTER */
+
+.ai-center{
+
+  position:absolute;
+
+  inset:50% auto auto 50%;
+
+  transform:
+  translate(-50%,-50%);
+
+  width:48px;
+  height:48px;
+
+  border-radius:50%;
+
+  background:#3b82f6;
+
+  box-shadow:
+  0 0 26px rgba(59,130,246,0.6);
+
+  transition:0.45s ease;
+}
+
+/* POWER ON */
+
+.device-card:hover
+.ai-center{
+
+  transform:
+  translate(-50%,-50%)
+  scale(1.12);
+
+  box-shadow:
+  0 0 60px rgba(59,130,246,1);
+}
+
+.device-card:hover
+.ai-ring{
+
+  border-color:
+  rgba(59,130,246,0.18);
+
+  box-shadow:
+  0 0 18px rgba(59,130,246,0.08);
+}
+
+/* ROTATION */
+
+@keyframes rotateRing{
+
+  from{
+    transform:rotate(0deg);
+  }
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+/* ========================================
+   AI INFO
+======================================== */
+
+.ai-info{
+
+  position:relative;
+
+  left:auto;
+  bottom:auto;
+
+  text-align:center;
+}
+
+.ai-info p{
+
+  width:100%;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media(max-width:768px){
+
+  .desktop-screen{
+
+    width:100%;
+
+    height:280px;
+  }
+
+  .software-window{
+
+    width:100%;
+  }
+
+  .mobile-screen{
+
+    width:210px;
+    height:430px;
+  }
+
+  .device-info{
+
+    left:22px;
+    bottom:22px;
+  }
+
+  .device-info h3{
+
+    font-size:1.7rem;
+  }
+
+  .device-info p{
+
+    width:92%;
+
+    font-size:0.88rem;
+  }
+
+}
